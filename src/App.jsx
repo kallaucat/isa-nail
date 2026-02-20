@@ -94,6 +94,7 @@ function App() {
     <div className="hero-scroll">Isa-Nails</div>
   </div>
 </header>
+
 {/* 3. GALERÍA */}
       <section id="galeria" className="gallery-section">
         <h2>Our Latest Designs</h2>
