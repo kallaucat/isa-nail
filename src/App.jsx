@@ -12,28 +12,28 @@ const SERVICES = [
   {
     id: 1,
     name: 'Gel-X Extensions',
-    img: `${BASE}/img/img1.jpg`,
+img: `${BASE}img/img1.jpg`,
     price: '$90 – $200+',
     desc: 'Extensiones completas con color sólido. Tiers 1–4 según el diseño elegido.'
   },
   {
     id: 2,
     name: 'Structure Gel',
-    img: `${BASE}/img/img2.jpg`,
+img: `${BASE}img/img2.jpg`,
     price: '$75 – $190+',
     desc: 'Refuerzo con nivelación y color sólido. Ideal para uñas naturales.'
   },
   {
     id: 3,
     name: 'Nail Art & Diseños',
-    img: `${BASE}/img/img3.jpg`,
+img: `${BASE}img/img3.jpg`,
     price: '$25 – $80+',
     desc: 'Desde francesas hasta diseños personalizados. Precio según complejidad.'
   },
   {
     id: 4,
     name: 'Add-ons & Repairs',
-    img: `${BASE}/img/img4.jpg`,
+img: `${BASE}img/img4.jpg`,
     price: '$12 – $30',
     desc: 'Remoción foránea ($30) · Reparación de uña ($12) · Remoción propia ($15).'
   }
@@ -216,8 +216,8 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
               </a>
             </div>
             <div className="about-photo-wrap">
-              <img src={`${BASE}/img/img2.jpg`} alt="Isa trabajando en uñas" />
-              <div className="about-accent-box">
+<img src={`${BASE}img/img2.jpeg`} alt="Isa trabajando en uñas" />             
+<div className="about-accent-box">
                 <strong>Isa Nails ✨</strong>
                 Queens, New York
               </div>
