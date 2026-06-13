@@ -6,32 +6,34 @@ const WHATSAPP_NUMBER = '19298417462'
 const WHATSAPP_MSG = encodeURIComponent('Hola Isa Nails 💅 Vi tu página web y me gustaría agendar una cita. ¿Tienes disponibilidad?')
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`
 
+const BASE = '/isa-nail'
+
 const SERVICES = [
   {
     id: 1,
     name: 'Gel-X Extensions',
-    img: '/img/img1.jpg',
+    img: `${BASE}/img/img1.jpg`,
     price: '$90 – $200+',
     desc: 'Extensiones completas con color sólido. Tiers 1–4 según el diseño elegido.'
   },
   {
     id: 2,
     name: 'Structure Gel',
-    img: '/img/img2.jpg',
+    img: `${BASE}/img/img2.jpg`,
     price: '$75 – $190+',
     desc: 'Refuerzo con nivelación y color sólido. Ideal para uñas naturales.'
   },
   {
     id: 3,
     name: 'Nail Art & Diseños',
-    img: '/img/img3.jpg',
+    img: `${BASE}/img/img3.jpg`,
     price: '$25 – $80+',
     desc: 'Desde francesas hasta diseños personalizados. Precio según complejidad.'
   },
   {
     id: 4,
     name: 'Add-ons & Repairs',
-    img: '/img/img4.jpg',
+    img: `${BASE}/img/img4.jpg`,
     price: '$12 – $30',
     desc: 'Remoción foránea ($30) · Reparación de uña ($12) · Remoción propia ($15).'
   }
@@ -120,7 +122,7 @@ export default function App() {
       </nav>
 
       {/* ── HERO ── */}
-      <header id="inicio" className="hero-section" style={{ backgroundImage: "url('/img/hero-nails.jpg')" }}>
+      <header id="inicio" className="hero-section" style={{ backgroundImage: `url('${BASE}/img/hero-nails.jpg')` }}>
         <div className="hero-overlay" />
         <div className="hero-content">
           <span className="hero-kicker">Queens · New York City</span>
@@ -214,7 +216,7 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
               </a>
             </div>
             <div className="about-photo-wrap">
-              <img src="/img/img2.jpg" alt="Isa trabajando en uñas" />
+              <img src={`${BASE}/img/img2.jpg`} alt="Isa trabajando en uñas" />
               <div className="about-accent-box">
                 <strong>Isa Nails ✨</strong>
                 Queens, New York
@@ -228,7 +230,6 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
       <section id="reservar">
         <div className="section-inner">
           <div className="booking-wrap">
-            {/* Info lateral */}
             <div>
               <span className="section-eyebrow">Agenda tu visita</span>
               <h2 className="section-title">Reserva tu cita</h2>
@@ -268,7 +269,6 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
               </a>
             </div>
 
-            {/* Formulario */}
             <div>
               {sent ? (
                 <div className="booking-form">
@@ -282,16 +282,8 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
                 <form className="booking-form" onSubmit={confirmBooking}>
                   <div className="form-group">
                     <label>Nombre completo</label>
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Tu nombre"
-                      value={form.name}
-                      onChange={handleChange}
-                      required
-                    />
+                    <input type="text" name="name" placeholder="Tu nombre" value={form.name} onChange={handleChange} required />
                   </div>
-
                   <div className="form-group">
                     <label>Servicio</label>
                     <select name="service" value={form.service} onChange={handleChange}>
@@ -302,28 +294,14 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
                       <option value="Nail Repair">Reparación de uña ($12)</option>
                     </select>
                   </div>
-
                   <div className="form-group">
                     <label>Fecha y hora preferida</label>
-                    <input
-                      type="datetime-local"
-                      name="date"
-                      value={form.date}
-                      onChange={handleChange}
-                      required
-                    />
+                    <input type="datetime-local" name="date" value={form.date} onChange={handleChange} required />
                   </div>
-
                   <div className="form-group">
                     <label>Notas adicionales (opcional)</label>
-                    <textarea
-                      name="notes"
-                      placeholder="Color, diseño, referencia de foto, alergias..."
-                      value={form.notes}
-                      onChange={handleChange}
-                    />
+                    <textarea name="notes" placeholder="Color, diseño, referencia de foto, alergias..." value={form.notes} onChange={handleChange} />
                   </div>
-
                   <button type="submit" className="btn-confirmar" disabled={sending}>
                     {sending ? 'Enviando...' : 'Confirmar cita'}
                   </button>
@@ -370,12 +348,11 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
               Diseños únicos · Productos premium · Atención personalizada.
             </p>
             <div className="social-links">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">📷</a>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="social-link" aria-label="WhatsApp">💬</a>
-              <a href="mailto:izzycnails@gmail.com" className="social-link" aria-label="Email">✉️</a>
+              <a href="https://instagram.com/izzynailss_" target="_blank" rel="noopener noreferrer" className="social-link">IG</a>
+              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" className="social-link">WA</a>
+              <a href="mailto:izzycnails@gmail.com" className="social-link">✉</a>
             </div>
           </div>
-
           <div>
             <div className="footer-col-title">Navegación</div>
             <ul className="footer-links">
@@ -386,7 +363,6 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
               <li><a href="#resenas">Reseñas</a></li>
             </ul>
           </div>
-
           <div>
             <div className="footer-col-title">Contacto</div>
             <div className="footer-contact-line"><span>📍</span><span>Queens, New York City</span></div>
@@ -394,7 +370,6 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
             <div className="footer-contact-line"><span>⏰</span><span>Lun – Sáb · 10 am – 7 pm</span></div>
           </div>
         </div>
-
         <div className="footer-bottom">
           <span className="footer-copy">© 2026 Isa Nails. Queens, New York.</span>
           <span className="footer-copy">Hecho con ✨ en NYC</span>
@@ -402,13 +377,7 @@ Hoy veo cada set como algo especial que construyo con intención y detalle para 
       </footer>
 
       {/* ── WHATSAPP BUBBLE ── */}
-      <a
-        href={WHATSAPP_LINK}
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
-      >
+      <a href={WHATSAPP_LINK} className="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       </a>
 
