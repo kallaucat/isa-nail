@@ -6,8 +6,7 @@ const WHATSAPP_NUMBER = '19298417462'
 const WHATSAPP_MSG = encodeURIComponent('Hola Isa Nails 💅 Vi tu página web y me gustaría agendar una cita. ¿Tienes disponibilidad?')
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`
 
-const BASE = '/isa-nail'
-
+const BASE = ''
 const SERVICES = [
   {
     id: 1,
